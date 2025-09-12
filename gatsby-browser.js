@@ -1,7 +1,17 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/
- */
+import React from "react";
+import PageTransition from "./src/components/PageTransition";
+import "@fontsource-variable/inter";
 
-// You can delete this file if you're not using it
+export const wrapPageElement = ({ element }) => {
+  return <PageTransition>{element}</PageTransition>;
+};
+export const onInitialClientRender = () => {
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+};

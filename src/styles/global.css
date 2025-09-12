@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Link styling */
+a {
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #6366f1; /* Indigo-500 */
+}
+
+/* Button reset */
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Smooth fade-in for page content */
+main {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+html.dark {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+.clip-trapezium-left {
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+.clip-vertical-trapezium {
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
+}
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+}
+@layer base {
+  a {
+    text-decoration: none !important;
+  }
+}
+
+
