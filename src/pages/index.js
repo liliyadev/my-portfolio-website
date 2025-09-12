@@ -72,7 +72,7 @@ const projects = [
   {
     title: "Built with Gatsby. Raised with love.",
     description: "It’s a little markdown-powered space where I share what I’m learning, building, and dreaming. No frills—just honest bytes from my journey.",
-    link: "https://github.com/liliyadev/blog-platform",
+    link: "https://blog.liliyadev.ca",
   },
 ];
 
@@ -113,7 +113,7 @@ const IndexPage = () => {
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 1 }}
-  className="text-4xl font-display leading-relaxed text-white"
+  className="text-3xl font-display leading-relaxed text-white"
 >
   <Typewriter
     text="I design with empathy, build with precision, and refine until every interaction tells a story worth remembering."
