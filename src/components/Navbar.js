@@ -45,11 +45,11 @@ const Navbar = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-6 items-center text-base font-medium pr-24">
-          <Link to="/" className="text-2xl text-gray-200 dark:text-gray-100 hover:text-indigo-600 transition">Home</Link>
-          <Link to="/page-2" className="text-2xl text-gray-200 dark:text-gray-100 hover:text-indigo-600 transition">Page 2</Link>
-          <a href="#projects" className="text-2xl text-gray-200 dark:text-gray-100 hover:text-indigo-600 transition">Projects</a>
-          <a href="#contact" className="text-2xl text-gray-200 dark:text-gray-100 hover:text-indigo-600 transition">Contact</a>
-
+          {/*<Link to="/" className="text-2xl text-gray-200 dark:text-gray-100 hover:text-indigo-600 transition">Home</Link>
+          <Link to="/page-2" className="text-2xl text-gray-200 dark:text-gray-100 hover:text-indigo-600 transition">Page 2</Link>*/}
+          <a href="https://blog.liliyadev.ca/" className="text-2xl text-gray-200 dark:text-gray-100 hover:text-indigo-600 transition">Blog</a>
+          <Link to="#contact" className="text-2xl text-gray-200 dark:text-gray-100 hover:text-indigo-600 transition">Contact</Link>
+          
           {/* 🌙 Dark Mode Toggle */}
           <button
             aria-label="Toggle dark mode"
@@ -64,7 +64,7 @@ const Navbar = () => {
         {/* Mobile Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-gray-900 dark:text-gray-100 focus:outline-none"
+          className="flex flex-col md:hidden space-y-4 mt-4 px-4 py-6 bg-blue-600 rounded-lg shadow-lg text-white focus:outline-none"
         >
           ☰
         </button>
@@ -72,31 +72,33 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            key="mobile-menu"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            style={{ position: 'relative' }}
-            className="hidden md:flex space-x-6 items-center"
-          >
-            <Link to="/" className="text-slate-100 text-lg font-medium no-underline hover:text-indigo-200 hover:scale-105 hover:drop-shadow-md transition duration-200">Home</Link>
-            <Link to="/page-2" className="text-slate-100 text-lg font-medium no-underline transition duration-200 hover:text-indigo-200 hover:scale-105 hover:drop-shadow-md">Page 2</Link>
-            <a href="#projects" className="text-slate-100 text-lg font-medium no-underline transition duration-200 hover:text-indigo-200 hover:scale-105 hover:drop-shadow-md">Projects</a>
-            <a href="#contact" className="text-slate-100 text-lg font-medium no-underline transition duration-200 hover:text-indigo-200 hover:scale-105 hover:drop-shadow-md">Contact</a>
+  {isOpen && (
+    <motion.div
+      key="mobile-menu"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.4 }}
+      className="flex flex-col md:hidden space-y-4 mt-4 px-4 py-6 bg-blue-600 rounded-lg shadow-lg"
+    >
+      <a
+        href="https://blog.liliyadev.ca/"
+        onClick={() => setIsOpen(false)}
+        className="text-white text-lg font-medium hover:text-indigo-200 transition"
+      >
+        Blog
+      </a>
+      <Link
+        to="#contact"
+        onClick={() => setIsOpen(false)}
+        className="text-white text-lg font-medium hover:text-indigo-200 transition"
+      >
+        Contact
+      </Link>
+    </motion.div>
+  )}
+</AnimatePresence>
 
-            {/* 🌙 Mobile Dark Mode Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="px-3 py-2 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded hover:bg-gray-200 dark:hover:bg-gray-600 flex items-center space-x-2"
-            >
-              {isDark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
-              <span>Toggle</span>
-            </button>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </nav>
   );
 };

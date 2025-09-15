@@ -83,56 +83,48 @@ const IndexPage = () => {
       {/* Animated Hero Section */}
 <section className="w-full m-0 p-0 pt-24">
   <div
-          ref={ref}
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={inView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="w-full clip-vertical-trapezium bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 animate-gradient text-white shadow-2xl"
+    ref={ref}
+    initial={{ opacity: 0, scale: 0.95 }}
+    animate={inView ? { opacity: 1, scale: 1 } : {}}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    className="w-full clip-vertical-trapezium bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 animate-gradient text-white shadow-2xl"
+  >
+    <div className="w-full flex flex-col lg:flex-row py-12 lg:py-20 gap-8 lg:gap-12 px-4 lg:px-12 items-center">
+      
+      {/* Image Section */}
+      <div className="w-full lg:w-1/3 flex justify-center items-center px-4 mx-auto">
+        <StaticImage
+          src="../images/DevArt.png"
+          alt="Liliya Vildanova"
+          className="w-full max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl h-auto p-4 sm:p-6"
+        />
+      </div>
+
+      {/* Text Section */}
+      <div className="w-full lg:w-2/3 px-4 mx-auto">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-display leading-relaxed text-white mb-6"
         >
-    <div className="w-full flex flex-col md:flex-row py-20 gap-12 px-4 md:pl-4 mx-auto items-center">
-      {/* Image: 1/3 of the card */}
-  <div className="w-full md:w-1/3 flex justify-center items-center px-4 md:px-0 md:pl-24">
-    <StaticImage
-      src="../images/DevArt.png"
-      alt="Liliya Vildanova"
-      className="w-full max-w-md md:max-w-xl lg:max-w-2xl h-auto p-6 pt-30"
-    />
-    {/*<StaticImage
-      src="../images/me.png"
-      alt="Liliya Vildanova"
-      className="w-full max-w-[400px] h-auto rounded-xl shadow-xl object-cover transform hover:scale-105 transition-transform duration-300"
-    />*/}
-  </div>
-  {/* Text: 2/3 of the card */}
-  <div className="w-full md:w-2/3 text-left px-6 md:px-12">
-  {/*<h1 className="text-6xl font-display font-bold tracking-wide mb-6">
-    <Typewriter text="Hi, I'm Liliya 👩‍🎨" speed={80} />
-    <span className="animate-pulse ml-2">|</span>
-  </h1>*/}
-  <motion.h1
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1 }}
-  className="text-3xl font-display leading-relaxed text-white"
->
-  <Typewriter
-    text="I design with empathy, build with precision, and refine until every interaction tells a story worth remembering."
-    speed={60}
-  />
-</motion.h1>
+          <Typewriter
+            text="I design with empathy, build with precision, and refine until every interaction tells a story worth remembering."
+            speed={60}
+          />
+        </motion.h1>
 
-  <a
-  href="#projects"
-  className="inline-block text-3xl font-semibold text-white border-2 border-white rounded-full px-8 py-4 bg-transparent hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out"
->
-  My Work
-</a>
-
-</div>
-  
-</div>
+        <a
+          href="#projects"
+          className="inline-block text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white border-2 border-white rounded-full px-6 sm:px-8 py-3 sm:py-4 bg-transparent hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out"
+        >
+          My Work
+        </a>
+      </div>
+    </div>
   </div>
 </section>
+
 <section className="w-full m-0 p-0">
   <div
     ref={ref}
@@ -141,19 +133,23 @@ const IndexPage = () => {
     transition={{ duration: 0.8, ease: "easeOut" }}
     className="w-full"
   >
-    <div className="w-full flex flex-col md:flex-row py-20 gap-12 px-4 md:pl-0 mx-auto items-center">
-      {/* Text: 2/3 of the card */}
-      <div className="w-full md:w-auto justify-left px-4 mx-auto">
-        <h2 className="text-4xl font-bold mb-6 text-[#2563eb]">I’m a front-end developer from Toronto.</h2>
-        <p className="text-2xl text-gray-800 dark:text-gray-200 leading-relaxed text-gray-100 mb-6">
+    <div className="w-full flex flex-col lg:flex-row py-20 gap-12 px-4 mx-auto items-center">
+      
+      {/* Text Section: 2/3 on desktop */}
+      <div className="w-full lg:w-2/3 md:pl-20 px-4 mx-auto">
+        <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-[#2563eb]">
+          I’m a front-end developer from Toronto.
+        </h2>
+        <p className="text-lg lg:text-2xl text-gray-800 dark:text-gray-200 leading-relaxed mb-6">
           I design and build elegant, performant web experiences using React, Gatsby, and Tailwind CSS. My work spans everything from CMS refactors to scalable UI systems, and I bring creative precision to every pixel I touch.
         </p>
-        <p className="text-2xl text-gray-800 dark:text-gray-200 leading-relaxed text-gray-100 mb-6">
+        <p className="text-lg lg:text-2xl text-gray-800 dark:text-gray-200 leading-relaxed mb-6">
           Recently, I’ve been expanding into backend development, exploring API architecture and integration with tools like Node.js and FastAPI. Whether I’m building a weather dashboard or architecting a markdown-based blog, I focus on clean code, accessibility, and thoughtful collaboration.
         </p>
       </div>
-      {/* Image: 1/3 of the card */}
-      <div className="w-full md:w-1/3 flex justify-center items-center px-0 mx-auto">
+
+      {/* Image Section: 1/3 on desktop */}
+      <div className="w-full lg:w-1/3 flex justify-center items-center px-4 mx-auto">
         <StaticImage
           src="../images/about-illustration.png"
           alt="Developer illustration"
@@ -163,6 +159,7 @@ const IndexPage = () => {
     </div>
   </div>
 </section>
+
       {/* Projects Section */}
       <motion.section
         id="projects"

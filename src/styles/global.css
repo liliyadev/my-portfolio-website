@@ -57,9 +57,7 @@ html.dark {
 .clip-trapezium-left {
   clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
 }
-.clip-vertical-trapezium {
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
-}
+
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
@@ -82,4 +80,16 @@ html.dark {
   }
 }
 
+.clip-vertical-trapezium {
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+}
+
+@media (max-width: 1024px){
+  .clip-vertical-trapezium {
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
 
