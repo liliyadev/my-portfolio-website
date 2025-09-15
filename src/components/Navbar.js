@@ -29,9 +29,9 @@ const Navbar = () => {
       initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{ duration: 0.6 }}
-  className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 text-white shadow-md py-6 px-4"
+  className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 text-white shadow-md py-6 px-4 md:px-24"
     >
-      <div className="flex justify-between items-center md:flex-row gap-12 mx-auto md:pl-36 ">
+      <div className="flex justify-between items-center md:flex-row gap-12 mx-auto">
         {/*<Link to="/" className="text-3xl font-bold text-white dark:text-indig">
           &lt; Liliya Dev /&gt;
         </Link>*/}
@@ -44,7 +44,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex space-x-6 items-center text-base font-medium pr-24">
+        <div className="hidden md:flex space-x-6 items-center text-base font-medium">
           {/*<Link to="/" className="text-2xl text-gray-200 dark:text-gray-100 hover:text-indigo-600 transition">Home</Link>
           <Link to="/page-2" className="text-2xl text-gray-200 dark:text-gray-100 hover:text-indigo-600 transition">Page 2</Link>*/}
           <a href="https://blog.liliyadev.ca/" className="text-2xl text-gray-200 dark:text-gray-100 hover:text-indigo-600 transition">Blog</a>

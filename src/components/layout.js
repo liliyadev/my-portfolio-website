@@ -66,7 +66,7 @@ const Layout = ({ children }) => {
 
   {/* Contact Form + Footer Content */}
   {/*<section className="w-full py-20 bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 text-white">*/}
-  <div id="contact" className="flex justify-end px-4 sm:px-6">
+  <div id="contact" className="flex justify-end px-4 sm:px-6 md:px-24">
   <div className="relative z-10 w-full md:w-1/2 lg:w-1/3 bg-white/50 text-black p-8 rounded-xl shadow-xl space-y-6 px-4 sm:px-6 md:px-8 lg:px-12">
     <h2 className="text-3xl font-bold mb-6 text-[#2563eb]">Get in Touch</h2>
     <form
