@@ -116,7 +116,7 @@ const IndexPage = () => {
 
         <a
           href="#projects"
-          className="inline-block text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white border-2 border-white rounded-full px-6 sm:px-8 py-3 sm:py-4 bg-transparent hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out"
+          className="inline-block text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white border-2 border-white rounded-full px-6 sm:px-8 py-3 sm:py-4 bg-transparent hover:scale-105 hover:shadow-lg hover:text-white  transition-all duration-300 ease-in-out"
         >
           My Work
         </a>

@@ -66,47 +66,56 @@ const Layout = ({ children }) => {
 
   {/* Contact Form + Footer Content */}
   {/*<section className="w-full py-20 bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 text-white">*/}
-  <div id="contact" className="flex justify-end md:pr-24 ">
-    <div className="relative z-10 w-full md:w-1/2 lg:w-1/3 bg-white text-black p-8 rounded-xl shadow-xl space-y-6">
-      <h2 className="text-3xl font-bold mb-6 text-[#2563eb]">Get in Touch</h2>
-      <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        className="space-y-6"
+  <div id="contact" className="flex justify-end px-4 sm:px-6">
+  <div className="relative z-10 w-full md:w-1/2 lg:w-1/3 bg-white/50 text-black p-8 rounded-xl shadow-xl space-y-6 px-4 sm:px-6 md:px-8 lg:px-12">
+    <h2 className="text-3xl font-bold mb-6 text-[#2563eb]">Get in Touch</h2>
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="extra-details"
+      action="/thank-you"
+      className="space-y-6"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <div className="hidden">
+        <label>
+          Don’t fill this out if you're human:{" "}
+          <input name="extra-details" />
+        </label>
+      </div>
+
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+        className="w-full border border-gray-300 rounded-md px-4 py-2"
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+        className="w-full border border-gray-300 rounded-md px-4 py-2"
+      />
+      <textarea
+        name="message"
+        rows="5"
+        placeholder="Your Message"
+        required
+        className="w-full border border-gray-300 rounded-md px-4 py-2"
+      ></textarea>
+      <button
+        type="submit"
+        className="w-full bg-[#2563eb] text-white font-semibold py-3 rounded-md hover:bg-[#1e4ed8] transition-colors duration-300"
       >
-        <input type="hidden" name="form-name" value="contact" />
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          required
-          className="w-full border border-gray-300 rounded-md px-4 py-2"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          required
-          className="w-full border border-gray-300 rounded-md px-4 py-2"
-        />
-        <textarea
-          name="message"
-          rows="5"
-          placeholder="Your Message"
-          required
-          className="w-full border border-gray-300 rounded-md px-4 py-2"
-        ></textarea>
-        <button
-          type="submit"
-          className="w-full bg-[#2563eb] text-white font-semibold py-3 rounded-md hover:bg-[#1e4ed8] transition-colors duration-300"
-        >
-          Send Message
-        </button>
-      </form>
-      
-    </div>
+        Send Message
+      </button>
+    </form>
   </div>
+</div>
+
   <div className="w-full mt-16 flex justify-center">
     <p className="text-sm text-gray-100 text-center">
       © 2025 Liliya Vildanova. All rights reserved.
