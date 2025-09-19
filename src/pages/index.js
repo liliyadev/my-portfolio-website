@@ -78,7 +78,7 @@ const IndexPage = () => {
   return (
     <Layout>
       {/* Animated Hero Section */}
-<section className="w-full m-0 p-0 pt-24 md:px-24">
+<section className="w-full m-0 p-0 pt-24 md:py-24">
   <div
     ref={ref}
     initial={{ opacity: 0, scale: 0.95 }}
@@ -175,29 +175,29 @@ const IndexPage = () => {
               key={index}
               variant={fadeInLeft}
               delay={index * 0.2}
-              className="group relative w-full h-[300px] rounded-xl overflow-hidden border-2 border-[#2563eb] bg-white shadow-[0_4px_20px_rgba(37,99,235,0.2)] transition-all duration-300 ease-in-out hover:bg-[#2563eb] hover:scale-105"
             >
-              {/* Content */}
-              <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-6 transition-all duration-500">
-                <h3 className="text-[#2563eb] text-xl font-bold group-hover:text-white mb-2">
-                  {project.title}
-                </h3>
+              <div className="group relative w-full h-[300px] rounded-xl overflow-hidden border-2 border-[#2563eb] bg-white shadow-md transition-all duration-300 ease-in-out hover:bg-[#2563eb] hover:scale-105">
+                {/* Content */}
+                <div className="flex flex-col justify-center items-center text-center h-full px-6 transition-all duration-300">
+                  <h3 className="text-[#2563eb] text-xl font-bold transition-colors duration-300 group-hover:text-white mb-2">
+                    {project.title}
+                  </h3>
 
-                <p className="text-sm text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 mb-4">
-                  {project.description}
-                </p>
+                  <p className="text-sm text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 mb-4">
+                    {project.description}
+                  </p>
 
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 inline-block border-2 border-white text-white font-semibold px-4 py-2 rounded-full hover:bg-white hover:text-[#2563eb] hover:shadow-md"
-                >
-                  Website
-                </a>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 inline-block border-2 border-white text-white font-semibold px-4 py-2 rounded-full hover:bg-white hover:text-[#2563eb] hover:shadow-md"
+                  >
+                    Website
+                  </a>
+                </div>
               </div>
             </AnimatedReveal>
-
           ))}
         </div>
       </motion.section>
