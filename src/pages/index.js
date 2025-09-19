@@ -6,7 +6,6 @@ import { useInView } from "react-intersection-observer";
 import AnimatedReveal from "../components/AnimatedReveal";
 import Typewriter from "../components/Typewriter";
 import { StaticImage } from "gatsby-plugin-image";
-import skySymphonyPreview from "../images/sky-symphony-preview.png";
 
 
 import {
@@ -38,7 +37,7 @@ const AnimatedCard = ({ children }) => {
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0 },
-};
+}; 
 
 
 const samplePageLinks = [
@@ -66,7 +65,6 @@ const projects = [
     title: "Sky Symphony",
     description: "A poetic weather app that transforms forecasts into feeling...",
     link: "https://weather.liliyadev.ca/",
-    image: skySymphonyPreview
   },
   {
     title: "Built with Gatsby. Raised with love.",
@@ -174,16 +172,19 @@ const IndexPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 py-12 w-full">
           {projects.map((project, index) => (
             <AnimatedReveal key={index} variant={fadeInLeft} delay={index * 0.2} className="h-full flex flex-col justify-between gap-8 px-6 py-12 max-w-2xl mx-auto">
-              <div className="h-full flex flex-col justify-between col-span-1 w-full bg-white text-black border-2 border-[#2563eb] rounded-xl p-6 shadow-[0_4px_20px_rgba(37,99,235,0.3)] hover:scale-105 transition-transform duration-300 ease-in-out">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-700 mb-4" >{project.description}</p>
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 z-10 bg-white transition duration-500 group-hover:bg-gradient-to-br group-hover:from-[#2563eb] group-hover:via-[#3b82f6] group-hover:to-[#60a5fa]"></div>
+              {/* Content */}
+              <div className="relative z-20 flex flex-col justify-center items-center text-center h-full px-6 transition-all duration-500">
+                <h3 className="text-[#2563eb] text-xl font-bold group-hover:text-white mb-2">{project.title}</h3>
+                <p className="text-sm text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 mb-4" >{project.description}</p>
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#2563eb] font-medium hover:underline" 
+                  className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 inline-block border-2 border-white text-white font-semibold px-4 py-2 rounded-full hover:bg-white hover:text-[#2563eb] hover:shadow-md" 
                 >
-                   View →
+                   Website
                 </a>
               </div>
             </AnimatedReveal>
