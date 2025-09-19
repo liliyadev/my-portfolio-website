@@ -41,9 +41,6 @@ const cardVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-<Link to="/page-2" className="text-indigo-600 underline">
-  Go to Page 2 →
-</Link>
 
 
 const samplePageLinks = [
@@ -88,12 +85,11 @@ const IndexPage = () => {
     <Layout>
       {/* Animated Hero Section */}
 <section className="w-full m-0 p-0 pt-32 md:px-0 lg:py-10">
-  <div
+  <motion.div
     ref={ref}
     initial={{ opacity: 0, scale: 0.95 }}
     animate={inView ? { opacity: 1, scale: 1 } : {}}
     transition={{ duration: 0.8, ease: "easeOut" }}
-    className="w-full clip-vertical-trapezium bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 animate-gradient text-white shadow-2xl"
   >
     <div className="w-full flex flex-col lg:flex-row py-12 lg:py-20 gap-8 lg:gap-12 px-4 lg:px-12 items-center">
       
@@ -128,7 +124,7 @@ const IndexPage = () => {
         </a>
       </div>
     </div>
-  </div>
+  </motion.div>
 </section>
 
 <section className="w-full m-0 p-0 md:px-24">
