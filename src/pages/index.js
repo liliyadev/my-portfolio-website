@@ -63,19 +63,19 @@ const projects = [
     title: "Portfolio Website",
     description: "Built with Gatsby and Tailwind CSS. Fully responsive and fast.",
     link: "https://github.com/liliyadev/portfolio",
-    image: portfolioPreview,
+    //image: portfolioPreview,
   },
   {
     title: "Sky Symphony",
     description: "A poetic weather app that transforms forecasts into feeling...",
     link: "https://weather.liliyadev.ca/",
-    image: skySymphonyPreview,
+    //image: skySymphonyPreview,
   },
   {
     title: "Built with Gatsby. Raised with love.",
     description: "It’s a little markdown-powered space where I share what I’m learning, building, and dreaming. No frills—just honest bytes from my journey.",
     link: "https://blog.liliyadev.ca",
-    image: blogPreview,
+    //image: blogPreview,
   },
 ];
 
