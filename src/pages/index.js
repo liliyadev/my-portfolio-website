@@ -180,37 +180,37 @@ const IndexPage = () => {
       
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 py-12 w-full">
           {projects.map((project, index) => (
-            <AnimatedReveal
-              key={index}
-              variant={fadeInLeft}
-              delay={index * 0.2}
-              className="relative group w-full h-[300px] rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(37,99,235,0.3)] transition-transform duration-300 ease-in-out hover:scale-105"
-            >
-              {/* Project Image */}
-              {project.image && (
-                <img
-                  src={project.image}
-                  alt={`${project.title} preview`}
-                  className="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:blur-sm"
-                />
+            <AnimatedReveal key={index} variant={fadeInLeft} delay={index * 0.2}>
+              <div className="relative group h-full flex flex-col justify-between w-full rounded-xl overflow-hidden border-2 border-[#2563eb] shadow-[0_4px_20px_rgba(37,99,235,0.3)] transition-transform duration-300 ease-in-out hover:scale-105">
+                
+                {/* Hover Image */}
+                {project.image && (
+                  <img
+                    src={project.image}
+                    alt={`${project.title} preview`}
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0"
+                  />
+                )}
 
-              )}
+                {/* Blue Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#2563eb] via-[#3b82f6] to-[#60a5fa] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
 
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#2563eb] via-[#3b82f6] to-[#60a5fa] opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center p-6 z-10">
-                <h3 className="text-white text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-white text-sm mb-4">{project.description}</p>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-white text-[#2563eb] font-semibold px-4 py-2 rounded-full hover:bg-gray-100 transition"
-                >
-                  View →
-                </a>
+                {/* Content */}
+                <div className="relative z-20 p-6 transition-colors duration-500 group-hover:text-white">
+                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                  <p className="mb-4">{project.description}</p>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View project: ${project.title}`}
+                    className="font-medium underline"
+                  >
+                    Website →
+                  </a>
+                </div>
               </div>
             </AnimatedReveal>
-
           ))}
         </div>
       </motion.section>
