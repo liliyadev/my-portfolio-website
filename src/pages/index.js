@@ -6,9 +6,9 @@ import { useInView } from "react-intersection-observer";
 import AnimatedReveal from "../components/AnimatedReveal";
 import Typewriter from "../components/Typewriter";
 import { StaticImage } from "gatsby-plugin-image";
-import skySymphonyPreview from "../images/sky-symphony-preview.png";
-import blogPreview from "../images/personal-blog.png";
-import portfolioPreview from "../images/portfolio-preview.png";
+//import skySymphonyPreview from "../images/sky-symphony-preview.png";
+//import blogPreview from "../images/personal-blog.png";
+//import portfolioPreview from "../images/portfolio-preview.png";
 
 import {
   fadeInUp,
