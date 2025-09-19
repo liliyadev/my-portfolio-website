@@ -7,8 +7,7 @@ import AnimatedReveal from "../components/AnimatedReveal";
 import Typewriter from "../components/Typewriter";
 import { StaticImage } from "gatsby-plugin-image";
 import skySymphonyPreview from "../images/sky-symphony-preview.png";
-import blogPreview from "../images/personal-blog.png";
-import portfolioPreview from "../images/portfolio-preview.png";
+
 
 import {
   fadeInUp,
@@ -42,7 +41,6 @@ const cardVariants = {
 };
 
 
-
 const samplePageLinks = [
   {
     text: "Page 2",
@@ -63,19 +61,17 @@ const projects = [
     title: "Portfolio Website",
     description: "Built with Gatsby and Tailwind CSS. Fully responsive and fast.",
     link: "https://github.com/liliyadev/portfolio",
-    image: portfolioPreview,
   },
   {
     title: "Sky Symphony",
     description: "A poetic weather app that transforms forecasts into feeling...",
     link: "https://weather.liliyadev.ca/",
-    image: skySymphonyPreview,
+    image: skySymphonyPreview
   },
   {
     title: "Built with Gatsby. Raised with love.",
     description: "It’s a little markdown-powered space where I share what I’m learning, building, and dreaming. No frills—just honest bytes from my journey.",
     link: "https://blog.liliyadev.ca",
-    image: blogPreview,
   },
 ];
 
@@ -84,8 +80,8 @@ const IndexPage = () => {
   return (
     <Layout>
       {/* Animated Hero Section */}
-<section className="w-full m-0 p-0 pt-32 md:px-0 lg:py-10">
-  <motion.div
+<section className="w-full m-0 p-0 pt-24 md:px-24">
+  <div
     ref={ref}
     initial={{ opacity: 0, scale: 0.95 }}
     animate={inView ? { opacity: 1, scale: 1 } : {}}
@@ -125,7 +121,7 @@ const IndexPage = () => {
         </a>
       </div>
     </div>
-  </motion.div>
+  </div>
 </section>
 
 <section className="w-full m-0 p-0 md:px-24">
@@ -177,36 +173,20 @@ const IndexPage = () => {
       
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 py-12 w-full">
           {projects.map((project, index) => (
-            <AnimatedReveal 
-            key={index} 
-            variant={fadeInLeft} 
-            delay={index * 0.2} 
-            className="h-full flex flex-col justify-between gap-8 px-6 py-12 max-w-2xl mx-auto"> 
-            <div className="relative h-full flex flex-col justify-between col-span-1 w-full bg-white text-black border-2 border-[#2563eb] rounded-xl p-6 shadow-[0_4px_20px_rgba(37,99,235,0.3)] hover:scale-105 transition-transform duration-300 ease-in-out overflow-hidden group"> 
-              <div className="relative group h-full flex flex-col justify-between col-span-1 w-full rounded-xl overflow-hidden border-2 border-[#2563eb] shadow-[0_4px_20px_rgba(37,99,235,0.3)] transition-transform duration-300 ease-in-out hover:scale-105"> 
-                {/* Hover Image */} 
-                {project.image && ( 
-                      <img src={project.image} 
-                          alt={`${project.title} preview`} 
-                          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0" /> 
-                        )} 
-                        {/* Blue Overlay on Hover */} 
-                          <div className="absolute inset-0 bg-[#2563eb] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div> 
-                        {/* Content */} 
-                        <div className="relative z-20 p-6 transition-colors duration-500 group-hover:text-white"> 
-                          <h3 className="text-xl font-bold mb-2">{project.title}</h3> 
-                          <p className="mb-4">{project.description}</p> 
-                          <a href={project.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="font-medium underline" > 
-                              View → 
-                      </a> 
-                  </div> 
-                  </div> 
-                  </div> 
-                  </AnimatedReveal>
-
+            <AnimatedReveal key={index} variant={fadeInLeft} delay={index * 0.2} className="h-full flex flex-col justify-between gap-8 px-6 py-12 max-w-2xl mx-auto">
+              <div className="h-full flex flex-col justify-between col-span-1 w-full bg-white text-black border-2 border-[#2563eb] rounded-xl p-6 shadow-[0_4px_20px_rgba(37,99,235,0.3)] hover:scale-105 transition-transform duration-300 ease-in-out">
+                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                <p className="text-gray-700 mb-4" >{project.description}</p>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#2563eb] font-medium hover:underline" 
+                >
+                   View →
+                </a>
+              </div>
+            </AnimatedReveal>
           ))}
         </div>
       </motion.section>
