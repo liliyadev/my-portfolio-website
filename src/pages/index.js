@@ -57,8 +57,8 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
 
 const projects = [
   {
-    title: "Portfolio Website",
-    description: "Built with Gatsby and Tailwind CSS. Fully responsive and fast.",
+    title: "Mobile Gaming Dashboard",
+    description: "Mobile Gaming Dashboard is a responsive, genre-filtered web app built with Angular and Ionic, designed to showcase dynamic game previews with animated UI elements and custom styling.",
     link: "https://github.com/liliyadev/portfolio",
   },
   {
