@@ -59,7 +59,7 @@ const projects = [
   {
     title: "Mobile Gaming Dashboard",
     description: "Mobile Gaming Dashboard is a responsive, genre-filtered web app built with Angular and Ionic, designed to showcase dynamic game previews with animated UI elements and custom styling.",
-    link: "https://gaming.liliyadev.ca/",
+    link: "https://calm-concha-fa16ba.netlify.app/games/",
   },
   {
     title: "Sky Symphony",
